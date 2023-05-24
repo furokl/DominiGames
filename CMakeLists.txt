@@ -4,9 +4,16 @@ cmake_minimum_required (VERSION 3.26)
 # Основные настройки исполняемого файла
 # -------------------------------------------
 set(PROJECT_NAME DominiGames)
-set(SOURCES src/main.cpp)
 set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/resources/icon/app.rc")
 set(CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/sfml")
+
+file(GLOB SOURCES 
+	"src/*.h" 
+	"src/*.cpp" 
+	"src/Game/*.h" 
+	"src/Game/*.cpp" 
+	"src/Base/*.h" 
+	"src/Base/*.cpp")
 
 project(${PROJECT_NAME} CXX)
 add_executable(${PROJECT_NAME} WIN32 
